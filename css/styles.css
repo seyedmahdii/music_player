@@ -1,0 +1,73 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/* VARIABLES */
+:root {
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --bg-color: hsl(210, 36%, 96%);
+    --dark-bg: #121212;
+    --primary-color-1: hsl(0, 83%, 25%);
+    --primary-color-2: hsl(0, 83%, 30%);
+    --primary-color-3: hsl(0, 83%, 35%);
+    --primary-color-4: hsl(0, 83%, 40%);
+    --primary-color-5: hsl(0, 83%, 45%);
+    --primary-color-6: hsl(0, 83%, 50%);
+    --primary-color-7: hsl(0, 83%, 55%);
+    --primary-color-8: hsl(0, 83%, 60%);
+    --grey-color-0: hsl(211, 61%, 10%);
+    --grey-color-1: hsl(209, 61%, 16%);
+    --grey-color-2: hsl(211, 39%, 23%);
+    --grey-color-3: hsl(209, 34%, 30%);
+    --grey-color-4: hsl(209, 28%, 39%);
+    --grey-color-5: hsl(210, 22%, 49%);
+    --grey-color-6: hsl(209, 23%, 60%);
+    --grey-color-7: hsl(211, 27%, 70%);
+    --grey-color-8: hsl(210, 31%, 80%);
+    --grey-color-9: hsl(212, 33%, 89%);
+    --grey-color-10: hsl(213, 39%, 95%);
+    --white-color: #ffffff;
+    --spacing: 0.4rem;
+    --radius: 0.8rem;
+    --transition: all 0.3s ease-out;
+}
+
+/* GLOBAL STYLES */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--ff-secondary);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    background-color: var(--bg-color);
+    color: var(--grey-color-1);
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+.container {
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+}
