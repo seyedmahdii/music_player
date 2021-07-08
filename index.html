@@ -5,10 +5,51 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Music Player</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
-        <h1>Music Player</h1>
+        <div class="container">
+            <main class="content">
+                <header class="header">
+                    <div class="cover-wrapper">
+                        <div class="cover">
+                            <img
+                                src="images/Badfinger - Baby Blue.jpg"
+                                class="cover__img"
+                                alt="cover"
+                            />
+                        </div>
+                    </div>
+                    <h2 class="title">title</h2>
+                    <h4 class="singer">singer</h4>
+                </header>
+
+                <div class="track-wrapper">
+                    <audio
+                        src="audio/Badfinger - Baby Blue.mp3"
+                        class="track"
+                    ></audio>
+                </div>
+
+                <footer class="footer">
+                    <div class="buttons">
+                        <button
+                            class="btn prev fa fa-fast-backward"
+                            disabled
+                        ></button>
+                        <button class="btn play-pause fa fa-play"></button>
+                        <button class="btn next fa fa-fast-forward"></button>
+                    </div>
+                </footer>
+            </main>
+        </div>
 
         <script src="js/app.js"></script>
     </body>

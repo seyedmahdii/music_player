@@ -70,4 +70,64 @@ button {
     width: 100%;
     max-width: 90vw;
     margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+.content {
+    background-color: white;
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+    box-shadow: var(--dark-shadow);
+}
+.header {
+    width: 90%;
+}
+.cover-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.cover__img {
+    object-fit: cover;
+    height: 100%;
+}
+.title {
+    margin: 1rem 0;
+    font-size: 30px;
+}
+.singer {
+    font-size: 18px;
+    color: var(--grey-color-4);
+}
+
+.footer {
+    width: 100%;
+}
+.btn {
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 50%;
+    padding: 0.6rem;
+    margin: 1rem;
+    color: var(--grey-color-1);
+    transition: var(--transition);
+}
+.btn:disabled {
+    color: rgb(207, 207, 207);
 }
