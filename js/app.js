@@ -38,6 +38,9 @@ const title = document.querySelector(".title");
 const singer = document.querySelector(".singer");
 const coverImg = document.querySelector(".cover__img");
 const track = document.querySelector(".track");
+const timeline = document.querySelector(".timeline");
+const currentTime = document.querySelector(".current-time");
+const duration = document.querySelector(".duration");
 
 const displayContent = (ind) => {
     title.textContent = data[ind].title;
@@ -51,11 +54,7 @@ let counter = 0;
 displayContent(counter);
 
 play_pauseBtn.addEventListener("click", () => {
-    if (isPlaying) {
-        track.pause();
-    } else {
-        track.play();
-    }
+    playMusic(isPlaying);
     isPlaying = !isPlaying;
     handlePlayIcon(isPlaying);
 });
@@ -64,12 +63,36 @@ nextBtn.addEventListener("click", () => {
     counter++;
     handleNext_PrevBtns();
     displayContent(counter);
+    playMusic(!isPlaying);
 });
 
 prevBtn.addEventListener("click", () => {
     counter--;
     handleNext_PrevBtns();
     displayContent(counter);
+    playMusic(!isPlaying);
+});
+
+track.addEventListener("ended", () => {
+    counter++;
+    if (counter === data.length) {
+        counter = 0;
+    }
+    handleNext_PrevBtns();
+    displayContent(counter);
+    playMusic(!isPlaying);
+});
+
+// Values of timeline
+setInterval(() => {
+    timeline.max = track.duration;
+    duration.textContent = timeFormat(track.duration);
+    timeline.value = track.currentTime;
+    currentTime.textContent = timeFormat(track.currentTime);
+}, 500);
+
+timeline.addEventListener("click", () => {
+    track.currentTime = timeline.value;
 });
 
 const handlePlayIcon = (status) => {
@@ -89,4 +112,23 @@ const handleNext_PrevBtns = () => {
     } else {
         nextBtn.disabled = false;
     }
+};
+
+const playMusic = (status) => {
+    if (status) {
+        track.pause();
+    } else {
+        track.play();
+    }
+};
+
+const timeFormat = (sec) => {
+    const minutes = Math.floor(sec / 60);
+    const seconds = Math.floor(sec - minutes * 60);
+
+    return `${numberFormat(minutes)}:${numberFormat(seconds)}`;
+};
+
+const numberFormat = (num) => {
+    return num < 10 ? `0${num}` : num;
 };
